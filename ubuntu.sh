@@ -86,8 +86,12 @@ if $(echo $p | grep -q [Yy]); then
     sudo -H pip3 install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
 fi
 # Wget
+mkdir .tmp && \
+git clone https://github.com/Mikimoto/cowfiles.git .tmp && \
+sudo mv .tmp/*.cow /usr/share/cowsay/cows && \
+rm -rf .tmp  && \
 if ! $(grep -q cowthink ~/.bashrc); then
-    printf "\n#Startup message.\nfortune|cowthink|lolcat" >> ~/.bashrc
+    printf "\n#Startup message.\nfortune|cowthink -f nyan|lolcat" >> ~/.bashrc
 fi
 echo
 neofetch
