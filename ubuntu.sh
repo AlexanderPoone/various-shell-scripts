@@ -80,7 +80,7 @@ fi
 # Install Python 3 office.
 if $(echo $p | grep -q ^[Yy]); then
     sudo apt-get install libgeos-c1v5 libgeos-dev && \
-    sudo -H pip3 install pyqt5 pyopengl numpy scipy pygments pyyaml pandas matplotlib jupyter roman nltk scikit-image scikit-learn Pillow sphinx nose pyttsx3 gmaps && \
+    sudo -H pip3 install pyqt5 pyqtdatavisualization pyqtchart pyqt3d colorama pyopengl numpy scipy pygments pyyaml pandas matplotlib jupyter roman nltk scikit-image scikit-learn pillow sphinx nose pyttsx3 gmaps && \
     sudo jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
     sudo jupyter nbextension enable --py --sys-prefix gmaps && \
     sudo -H pip3 install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
