@@ -64,7 +64,7 @@ sudo apt-get -y dist-upgrade && \
 sudo apt-get -y install $packages && \
 sudo apt-get -y purge --auto-remove && \
 # Install Node v8.
-if $(echo $n | grep -q [Yy]); then
+if $(echo $n | grep -q ^[Yy]); then
     curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add - && \
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6 && \
     sudo chmod -R 777 /etc/apt/sources.list.d && \
@@ -78,14 +78,14 @@ if $(echo $n | grep -q [Yy]); then
     sudo service mongod start
 fi
 # Install Python 3 office.
-if $(echo $p | grep -q [Yy]); then
+if $(echo $p | grep -q ^[Yy]); then
     sudo apt-get install libgeos-c1v5 libgeos-dev && \
     sudo -H pip3 install pyqt5 pyopengl numpy scipy pygments pyyaml pandas matplotlib jupyter roman nltk scikit-image scikit-learn Pillow sphinx nose pyttsx3 gmaps && \
     sudo jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
     sudo jupyter nbextension enable --py --sys-prefix gmaps && \
     sudo -H pip3 install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
 fi
-# Wget
+sudo sed -ie 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=-1/' /etc/default/grub && \
 mkdir .tmp && \
 git clone https://github.com/Mikimoto/cowfiles.git .tmp && \
 sudo mv .tmp/*.cow /usr/share/cowsay/cows && \
