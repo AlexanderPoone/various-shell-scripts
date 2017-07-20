@@ -86,6 +86,7 @@ if $(echo $p | grep -q ^[Yy]); then
     sudo -H pip3 install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
 fi
 sudo sed -ie 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=-1/' /etc/default/grub && \
+sudo update-grub && \
 mkdir .tmp && \
 git clone https://github.com/Mikimoto/cowfiles.git .tmp && \
 sudo mv .tmp/*.cow /usr/share/cowsay/cows && \
