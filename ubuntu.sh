@@ -93,7 +93,7 @@ oauth_token=\n\
 oauth_token_secret=\
 " > ~/twitter-files/credentials.txt && \
     printf '\n#NLTK Twitter API keys.\nexport TWITTER="~/twitter-files"' >> ~/.bashrc && \
-    (pluma ~/twitter-files/credentials.txt &)
+    (pluma ~/twitter-files/credentials.txt &)   # Operator precedence
 fi
 sudo sed -ie 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=-1/' /etc/default/grub && \
 sudo update-grub && \
