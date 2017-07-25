@@ -82,18 +82,18 @@ fi
 if $(echo $p | grep -q ^[Yy]); then
     sudo apt-get install libgeos-c1v5 libgeos-dev && \
     sudo -H pip3 install pyqt5 pyqtdatavisualization pyqtchart pyqt3d colorama pyopengl numpy scipy pygments pyyaml pandas matplotlib jupyter roman nltk \
-    scikit-image scikit-learn flask twython pywavelets networkx mistune pillow sphinx nose pyttsx3 gmaps && \
+scikit-image scikit-learn flask twython pywavelets networkx mistune pillow sphinx nose pyttsx3 gmaps && \
     sudo jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
     sudo jupyter nbextension enable --py --sys-prefix gmaps && \
     sudo -H pip3 install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz && \
-    mkdir ~/twitter-files && \
+    mkdir -p ~/twitter-files && \
     printf "app_key=\n\
 app_secret=\n\
 oauth_token=\n\
 oauth_token_secret=\
 " > ~/twitter-files/credentials.txt && \
     printf '\n#NLTK Twitter API keys.\nexport TWITTER="~/twitter-files"' >> ~/.bashrc && \
-    pluma ~/twitter-files/credentials.txt &
+    (pluma ~/twitter-files/credentials.txt &)
 fi
 sudo sed -ie 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=-1/' /etc/default/grub && \
 sudo update-grub && \
