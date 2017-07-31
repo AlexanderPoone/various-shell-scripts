@@ -3,7 +3,7 @@
 # Copyleft 2017.
 #
 packages="traceroute whois curl cowsay fortune-mod lolcat neofetch git gcc g++ vlc terminator steam gparted \
-build-essential pluma gimp inkscape p7zip-full p7zip-rar"
+build-essential pluma gimp inkscape p7zip-full p7zip-rar anthy"
 printf "\033[0;31m\
 +------------------------------------------------------+\n\
 |                                                      |\n\
@@ -93,7 +93,7 @@ oauth_token=\n\
 oauth_token_secret=\
 " > ~/twitter-files/credentials.txt && \
     printf '\n#NLTK Twitter API keys.\nexport TWITTER="~/twitter-files"' >> ~/.bashrc && \
-    (pluma ~/twitter-files/credentials.txt &)   # Operator precedence
+    (pluma ~/twitter-files/credentials.txt &)                                                           # Operator precedence
 fi
 sudo sed -ie 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=-1/' /etc/default/grub && \
 sudo update-grub && \
