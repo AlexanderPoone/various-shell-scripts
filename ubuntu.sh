@@ -89,6 +89,7 @@ fi
 # Install Python 3 office.
 if $(echo $p | grep -q ^[Yy]); then
     sudo apt-get install libgeos-c1v5 libgeos-dev && \
+    sudo -H pip3 install --upgrade pip setuptools && \
     sudo -H pip3 install pyqt5 pyqtdatavisualization pyqtchart pyqt3d colorama pyopengl numpy scipy pygments pyyaml pandas matplotlib jupyter roman nltk \
 scikit-image scikit-learn twython pywavelets networkx mistune pillow sphinx nose pyttsx3 gmaps pymongo && \
     sudo jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
@@ -104,6 +105,7 @@ oauth_token_secret=\
     (pluma ~/twitter-files/credentials.txt &)                                                           # Operator precedence
 fi
 if $(echo $a | grep -q ^[Yy]); then
+    sudo -H pip3 install --upgrade pip setuptools && \
     sudo -H pip3 install flask && \
     sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 && \
     sudo chmod -R 777 /etc/apt/sources.list.d && \
