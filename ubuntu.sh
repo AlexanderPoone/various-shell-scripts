@@ -34,6 +34,14 @@ while true; do
     esac
 done
 while true; do
+    printf "\033[1;97mWould you like install \033[1;95mApache server w/ Flask\033[1;97m? (Y/N)\033[0m "
+    read a
+    case $a in
+        [Nn]* ) break;;
+        [Yy]* ) packages="$packages python3-pip apache2 libapache2-mod-wsgi software-properties-common"; break;;
+    esac
+done
+while true; do
     printf "\033[1;97mWould you like install \033[1;94mKDE educational stuff\033[1;97m? (Y/N)\033[0m "
     read k
     case $k in
@@ -71,7 +79,7 @@ if $(echo $n | grep -q ^[Yy]); then
     sudo chmod -R 777 /etc/apt/sources.list.d && \
     sudo echo "deb https://deb.nodesource.com/node_8.x zesty main" > /etc/apt/sources.list.d/nodesource.list && \
     sudo echo "deb-src https://deb.nodesource.com/node_8.x zesty main" > /etc/apt/sources.list.d/nodesource.list && \
-    sudo echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.4.list && \
+    sudo echo "deb [arch=amd64,arm64] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.4.list && \
     sudo chmod -R 644 /etc/apt/sources.list.d && \
     sudo chmod 655 /etc/apt/sources.list.d && \
     sudo apt-get update && \
@@ -82,7 +90,7 @@ fi
 if $(echo $p | grep -q ^[Yy]); then
     sudo apt-get install libgeos-c1v5 libgeos-dev && \
     sudo -H pip3 install pyqt5 pyqtdatavisualization pyqtchart pyqt3d colorama pyopengl numpy scipy pygments pyyaml pandas matplotlib jupyter roman nltk \
-scikit-image scikit-learn flask twython pywavelets networkx mistune pillow sphinx nose pyttsx3 gmaps && \
+scikit-image scikit-learn twython pywavelets networkx mistune pillow sphinx nose pyttsx3 gmaps pymongo && \
     sudo jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
     sudo jupyter nbextension enable --py --sys-prefix gmaps && \
     sudo -H pip3 install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz && \
@@ -94,6 +102,16 @@ oauth_token_secret=\
 " > ~/twitter-files/credentials.txt && \
     printf '\n#NLTK Twitter API keys.\nexport TWITTER="~/twitter-files"' >> ~/.bashrc && \
     (pluma ~/twitter-files/credentials.txt &)                                                           # Operator precedence
+fi
+if $(echo $a | grep -q ^[Yy]); then
+    sudo -H pip3 install flask && \
+    sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 && \
+    sudo chmod -R 777 /etc/apt/sources.list.d && \
+    sudo echo "deb [arch=amd64,i386] http://mariadb.nethub.com.hk/repo/10.2/ubuntu zesty main" > /etc/apt/sources.list.d/mariasource.list && \
+    sudo chmod -R 644 /etc/apt/sources.list.d && \
+    sudo chmod 655 /etc/apt/sources.list.d && \
+    sudo apt-get update && \
+    sudo apt-get -y install mariadb-server
 fi
 sudo sed -ie 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=-1/' /etc/default/grub && \
 sudo update-grub && \
