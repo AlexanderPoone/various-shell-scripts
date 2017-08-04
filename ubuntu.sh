@@ -106,7 +106,7 @@ oauth_token_secret=\
 fi
 if $(echo $a | grep -q ^[Yy]); then
     sudo -H pip3 install --upgrade pip setuptools && \
-    sudo -H pip3 install flask && \
+    sudo -H pip3 install flask feedparser && \
     sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 && \
     sudo chmod -R 777 /etc/apt/sources.list.d && \
     sudo echo "deb [arch=amd64,i386] http://mariadb.nethub.com.hk/repo/10.2/ubuntu zesty main" > /etc/apt/sources.list.d/mariasource.list && \
