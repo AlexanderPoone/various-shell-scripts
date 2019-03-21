@@ -11,5 +11,6 @@ f() {
 }
 j() {
     gtts-cli -l ja -o abc.mp3 "$1"
+    python3 -c "from pykakasi import kakasi as ka;k=ka();k.setMode('J','a');conv=k.getConverter();print(conv.do('$1'))"
     cvlc abc.mp3 --play-and-exit
 }
