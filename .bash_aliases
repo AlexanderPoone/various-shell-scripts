@@ -24,7 +24,7 @@ j() {
 w() {
 if [[ -z $(which gtts-cli) ]]; then sudo apt-get update; sudo apt-get -y install python3-gtts; fi
 if [[ -z $(which vlc) ]]; then sudo apt-get update; sudo apt-get -y install vlc; fi
-python3 -c "import mathdf" 2> /dev/null
+python3 -c "import bs4" 2> /dev/null
 if [[ $? -eq 1 ]]; then sudo apt-get update; sudo apt-get -y install python3-bs4; fi
 python3 -c "from urllib.request import urlopen as u
 from bs4 import BeautifulSoup as b
