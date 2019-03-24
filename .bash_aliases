@@ -1,5 +1,14 @@
 alias p='python3 -i -c "import numpy as np;import matplotlib.pyplot as plt"'
 alias k=kubectl
+alias kgd='k get deploy'
+alias kgp='k get pods'
+alias kgn='k get nodes'
+alias kgs='k get svc'
+alias kge='k get events --sort-by=".metadata.creationTimestamp" | tail -8'
+
+export nks='-n kube-system'
+export ETCDCTL_API=3
+export k8s='https://k8s.io/examples'
 alias g=/home/constantine/Documents/apache-tinkerpop-gremlin-console-3.4.0/bin/gremlin.sh
 alias a='less /home/constantine/Documents/asdf.txt'
 alias u='sudo apt-get update; sudo apt-get -y dist-upgrade; sudo apt-get -y purge --auto-remove'
@@ -30,6 +39,7 @@ python3 -c "from urllib.request import urlopen as u
 from bs4 import BeautifulSoup as b
 from re import findall as f
 from collections import OrderedDict as d
+from subprocess import Popen as p 
 v=u('https://en.wiktionary.org/wiki/$1')
 h=v.read().decode('utf-8')
 soup=b(h,'html.parser')
@@ -41,5 +51,9 @@ for i in soup.select('div.NavHead'):
             if x.startswith('Jap'):
                 t += f'{i.text}\n{x}\n'
 print(t)
-print(list(d.fromkeys(f(r'(?<= )[\u3041-\u3096\u30a0-\u30ff\u4e00-\u9fff]+',t))))"
+w=list(d.fromkeys(f(r'(?<= )[\u3041-\u3096\u30a0-\u30ff\u4e00-\u9fff]+',t)))
+print(w)
+for i in w:
+    y = p(['/bin/bash', '-i', '-c', f'j {i}'])
+    y.communicate()"
 }
