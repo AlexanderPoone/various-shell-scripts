@@ -17,3 +17,21 @@ j() {
     python3 -c "from pykakasi import kakasi as ka;k=ka();k.setMode('J','a');conv=k.getConverter();print(conv.do('$1'))"
     cvlc abc.mp3 --play-and-exit 2> /dev/null
 }
+w() {
+python3 -c "from urllib.request import urlopen as u
+from bs4 import BeautifulSoup as b
+from re import findall as f
+from collections import OrderedDict as d
+v=u('https://en.wiktionary.org/wiki/$1')
+h=v.read().decode('utf-8')
+soup=b(h,'html.parser')
+t=''
+for i in soup.select('div.NavHead'):
+    if i.next_sibling != None and i.next_sibling.next_sibling != None:
+        tmp=i.next_sibling.next_sibling.text
+        for x in tmp.split('\n'):
+            if x.startswith('Jap'):
+                t += f'{i.text}\n{x}\n'
+print(t)
+print(list(d.fromkeys(f(r'(?<= )[\u3041-\u3096\u30a0-\u30ff\u4e00-\u9fff]+',t))))"
+}
