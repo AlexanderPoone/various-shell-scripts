@@ -58,14 +58,14 @@ sudo chmod 644 /etc/default/apport && \
 sudo chmod 777 /etc/apt/sources.list && \
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak && \
 sudo printf "\
-deb http://archive.ubuntu.com/ubuntu artful main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu artful-updates main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu artful-backports main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu artful-security main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu artful-proposed main universe restricted multiverse\n\
-deb http://archive.canonical.com/ubuntu artful partner\n\
-deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu artful main\n\
-deb http://ppa.launchpad.net/videolan/master-daily/ubuntu artful main\n\
+deb http://archive.ubuntu.com/ubuntu eoan main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu eoan-updates main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu eoan-backports main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu eoan-security main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu eoan-proposed main universe restricted multiverse\n\
+deb http://archive.canonical.com/ubuntu eoan partner\n\
+deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu eoan main\n\
+deb http://ppa.launchpad.net/videolan/master-daily/ubuntu eoan main\n\
 " > /etc/apt/sources.list && \
 sudo chmod 664 /etc/apt/sources.list && \
 sudo apt-get update && \
@@ -91,7 +91,7 @@ if $(echo $p | grep -q ^[Yy]); then
     sudo apt-get install libgeos-c1v5 libgeos-dev && \
     sudo -H pip3 install --upgrade pip setuptools && \
     sudo -H pip3 install pyqt5 pyqtdatavisualization pyqtchart pyqt3d colorama pyopengl numpy scipy pygments pyyaml pandas matplotlib jupyter roman nltk \
-scikit-image scikit-learn twython pywavelets networkx mistune pillow sphinx nose pyttsx3 gmaps pymongo && \
+scikit-image scikit-learn twython pywavelets networkx mistune pillow sphinx nose pyttsx3 gmaps pymongo fiona spacy pykakasi kubernetes && \
     sudo jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
     sudo jupyter nbextension enable --py --sys-prefix gmaps && \
     sudo -H pip3 install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz && \
@@ -109,7 +109,7 @@ if $(echo $a | grep -q ^[Yy]); then
     sudo -H pip3 install flask feedparser && \
     sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 && \
     sudo chmod -R 777 /etc/apt/sources.list.d && \
-    sudo echo "deb [arch=amd64,i386] http://mariadb.nethub.com.hk/repo/10.2/ubuntu zesty main" > /etc/apt/sources.list.d/mariasource.list && \
+    sudo echo "deb [arch=amd64,i386] http://mariadb.nethub.com.hk/repo/10.4/ubuntu disco main" > /etc/apt/sources.list.d/mariasource.list && \
     sudo chmod -R 644 /etc/apt/sources.list.d && \
     sudo chmod 655 /etc/apt/sources.list.d && \
     sudo apt-get update && \
