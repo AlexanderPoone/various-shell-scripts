@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyleft 2017.
+# Copyleft 2017-19. All WRONGS reserved.
 #
 packages="traceroute whois curl cowsay fortune-mod lolcat neofetch git gcc g++ vlc terminator steam gparted \
 build-essential pluma gimp inkscape p7zip-full p7zip-rar anthy"
@@ -58,14 +58,14 @@ sudo chmod 644 /etc/default/apport && \
 sudo chmod 777 /etc/apt/sources.list && \
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak && \
 sudo printf "\
-deb http://archive.ubuntu.com/ubuntu eoan main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu eoan-updates main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu eoan-backports main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu eoan-security main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu eoan-proposed main universe restricted multiverse\n\
-deb http://archive.canonical.com/ubuntu eoan partner\n\
-deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu eoan main\n\
-deb http://ppa.launchpad.net/videolan/master-daily/ubuntu eoan main\n\
+deb http://archive.ubuntu.com/ubuntu focal main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu focal-updates main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu focal-backports main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu focal-security main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu focal-proposed main universe restricted multiverse\n\
+deb http://archive.canonical.com/ubuntu focal partner\n\
+deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu disco main\n\
+deb http://ppa.launchpad.net/videolan/master-daily/ubuntu focal main\n\
 " > /etc/apt/sources.list && \
 sudo chmod 664 /etc/apt/sources.list && \
 sudo apt-get update && \
@@ -109,7 +109,7 @@ if $(echo $a | grep -q ^[Yy]); then
     sudo -H pip3 install flask feedparser && \
     sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 && \
     sudo chmod -R 777 /etc/apt/sources.list.d && \
-    sudo echo "deb [arch=amd64,i386] http://mariadb.nethub.com.hk/repo/10.4/ubuntu disco main" > /etc/apt/sources.list.d/mariasource.list && \
+    sudo echo "deb [arch=amd64,i386] http://mariadb.nethub.com.hk/repo/10.4/ubuntu eoan main" > /etc/apt/sources.list.d/mariasource.list && \
     sudo chmod -R 644 /etc/apt/sources.list.d && \
     sudo chmod 655 /etc/apt/sources.list.d && \
     sudo apt-get update && \
