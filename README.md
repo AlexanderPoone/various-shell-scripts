@@ -5,6 +5,6 @@ Ditto. Deobfuscator for Dummies project (goodness me, I spelt Castilian wrong)
 * Rotating screen
 * Installing my work environment on Ubuntu
 * Shortening `kubectl` commands
-* Starting Castilian deobfuscation
-* Starting French deobfuscation
-* Starting Japanese deobfuscation
+* Running the Castilian deobfuscation program
+* Running the French deobfuscation program
+* Running the Japanese deobfuscation program
