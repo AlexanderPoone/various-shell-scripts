@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyleft 2017-19. All WRONGS reserved.
+# Copyleft 2017-21. All WRONGS reserved.
 #
 packages="traceroute whois curl cowsay fortune-mod lolcat neofetch git gcc g++ vlc terminator steam gparted \
 build-essential pluma gimp inkscape p7zip-full p7zip-rar anthy"
@@ -58,14 +58,14 @@ sudo chmod 644 /etc/default/apport && \
 sudo chmod 777 /etc/apt/sources.list && \
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak && \
 sudo printf "\
-deb http://archive.ubuntu.com/ubuntu focal main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu focal-updates main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu focal-backports main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu focal-security main universe restricted multiverse\n\
-deb http://archive.ubuntu.com/ubuntu focal-proposed main universe restricted multiverse\n\
-deb http://archive.canonical.com/ubuntu focal partner\n\
-deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu disco main\n\
-deb http://ppa.launchpad.net/videolan/master-daily/ubuntu focal main\n\
+deb http://archive.ubuntu.com/ubuntu jammy main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu jammy-updates main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu jammy-backports main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu jammy-security main universe restricted multiverse\n\
+deb http://archive.ubuntu.com/ubuntu jammy-proposed main universe restricted multiverse\n\
+deb http://archive.canonical.com/ubuntu jammy partner\n\
+deb http://ppa.launchpad.net/canonical-chromium-builds/stage/ubuntu bionic main\n\
+deb http://ppa.launchpad.net/videolan/master-daily/ubuntu jammy main\n\
 " > /etc/apt/sources.list && \
 sudo chmod 664 /etc/apt/sources.list && \
 sudo apt-get update && \
@@ -126,7 +126,7 @@ if ! $(grep -q cowthink ~/.bashrc); then
 fi
 echo
 neofetch
-# sudo apt-get install libqt5bluetooth5 libqt5clucene5 libqt5concurrent5  libqt5core5a  libqt5dbus5 libqt5designer5 libqt5designercomponents5 libqt5gui5  libqt5help5 libqt5location5  libqt5location5-plugins libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediaquick-p5 libqt5multimediawidgets5 libqt5network5 libqt5nfc5 libqt5opengl5 libqt5opengl5-dev libqt5positioning5  libqt5positioning5-plugins libqt5printsupport5 libqt5qml-graphicaleffects libqt5qml5 libqt5quick5  libqt5quickparticles5 libqt5quicktest5 libqt5quickwidgets5 libqt5scintilla2-11 libqt5scintilla2-11-dbg libqt5scintilla2-designer libqt5scintilla2-designer-dbg libqt5scintilla2-dev libqt5scintilla2-l10n libqt5script5 libqt5scripttools5 libqt5sensors5 libqt5sensors5-dev libqt5serialport5 libqt5serialport5-dev libqt5sql5 libqt5sql5-mysql libqt5sql5-sqlite libqt5svg5 libqt5svg5-dev libqt5svg5-private-dev libqt5test5 libqt5webkit5 libqt5webkit5-dbg libqt5webkit5-dev libqt5webkit5-qmlwebkitplugin libqt5widgets5  libqt5x11extras5 libqt5x11extras5-dev libqt5xml5 libqt5xmlpatterns5 libqt5xmlpatterns5-dev libqt5xmlpatterns5-private-dev
+# sudo apt-get install libqt5bluetooth5 libqt5clucene5 libqt5concurrent5 libqt5core5a libqt5dbus5 libqt5designer5 libqt5designercomponents5 libqt5gui5 libqt5help5 libqt5location5 libqt5location5-plugins libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediaquick-p5 libqt5multimediawidgets5 libqt5network5 libqt5nfc5 libqt5opengl5 libqt5opengl5-dev libqt5positioning5  libqt5positioning5-plugins libqt5printsupport5 libqt5qml-graphicaleffects libqt5qml5 libqt5quick5  libqt5quickparticles5 libqt5quicktest5 libqt5quickwidgets5 libqt5scintilla2-11 libqt5scintilla2-11-dbg libqt5scintilla2-designer libqt5scintilla2-designer-dbg libqt5scintilla2-dev libqt5scintilla2-l10n libqt5script5 libqt5scripttools5 libqt5sensors5 libqt5sensors5-dev libqt5serialport5 libqt5serialport5-dev libqt5sql5 libqt5sql5-mysql libqt5sql5-sqlite libqt5svg5 libqt5svg5-dev libqt5svg5-private-dev libqt5test5 libqt5webkit5 libqt5webkit5-dbg libqt5webkit5-dev libqt5webkit5-qmlwebkitplugin libqt5widgets5  libqt5x11extras5 libqt5x11extras5-dev libqt5xml5 libqt5xmlpatterns5 libqt5xmlpatterns5-dev libqt5xmlpatterns5-private-dev
 # sudo add-apt-repository ppa:moka/daily
 # sudo add-apt-repository ppa:numix/ppa
 # sudo add-apt-repository ppa:webupd8team/java
