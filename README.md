@@ -1,5 +1,10 @@
 # various-shell-scripts
-Ditto. Deobfuscator for Dummies project (goodness me, I spelt Castilian wrong)
+Ditto. Deobfuscator for Dummies project.
+
+## Roadmap
+* Create a new repo
+* Add support for German
+* Add support for kanjis
 
 ## Scripts for
 * Rotating screen
