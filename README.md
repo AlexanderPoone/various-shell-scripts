@@ -1,6 +1,8 @@
 # various-shell-scripts
 Ditto. Deobfuscator for Dummies project.
 
+English orthography
+
 ## Roadmap
 * Create a new repo
 * Add support for German
